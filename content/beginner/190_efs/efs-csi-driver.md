@@ -44,6 +44,11 @@ We need to update this manifest with the EFS ID created:
 sed -i "s/EFS_VOLUME_ID/$FILE_SYSTEM_ID/g" efs-pv.yaml
 ```
 
+We need to create the storage namespace:
+```
+kubectl create namespace storage
+```
+
 And then apply:
 ```
 kubectl apply -f efs-pv.yaml
